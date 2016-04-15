@@ -1,0 +1,40 @@
+{
+  "name": "lagoasoft",
+  "version": "0.0.1",
+  "description": "Test app with nodejs for lagoasoft",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://pedrorodrigues@github.com/pedrorodrigues/lagoasoft.git"
+  },
+  "keywords": [
+    "nodejs",
+    "knockoutjs",
+    "bluebird",
+    "jade",
+    "jquery",
+    "bootstrap"
+  ],
+  "author": "Pedro Ivo Rodrigues",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pedrorodrigues/lagoasoft/issues"
+  },
+  "homepage": "https://github.com/pedrorodrigues/lagoasoft#readme",
+  "dependencies": {
+    "bluebird": "^3.3.5",
+    "body-parser": "^1.15.0",
+    "connect": "^3.4.1",
+    "errorhandler": "^1.4.3",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "method-override": "^2.3.5",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0",
+    "serve-static": "^1.10.2",
+    "stylus": "^0.54.2"
+  }
+}
