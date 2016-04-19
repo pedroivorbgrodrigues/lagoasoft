@@ -1,0 +1,23 @@
+extends layout
+
+block content
+  .panel.panel-default
+    .panel-heading Facebook Info
+    .panel-body
+      .table-responsive
+        table.table
+          thead
+            tr
+              th Id
+              th Full Name
+              th E-mail
+              th Token
+          tbody
+            tr            
+                td #{user.fb_id}            
+                td #{user.name}            
+                td #{user.email}            
+                td #{user.token}
+
+  a.btn.btn-primary(href='/promisses')
+    span Buscar Músicas e Videos
