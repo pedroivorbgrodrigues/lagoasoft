@@ -2,7 +2,7 @@ extends layout
 
 block content
   .panel.panel-default
-    .panel-heading Facebook Info
+    .panel-heading My Facebook Info
     .panel-body
       .table-responsive
         table.table
@@ -19,5 +19,37 @@ block content
                 td #{user.email}            
                 td #{user.token}
 
-  a.btn.btn-primary(href='/promisses')
-    span Buscar Músicas e Videos
+  a.btn.btn-primary(data-bind="click: getAllUserFriends")
+    span List all registered users
+  .table-responsive
+    table.table
+      thead
+        tr          
+          th User
+          th User Friends          
+      tbody(data-bind="foreach: users")
+        tr
+          td(data-bind='text: user')
+          td(data-bind='text: friends')
+    script.
+      function UserFriendsViewModel(user, friends) {
+        var self = this;
+        self.user = user;
+        self.friends = friends;
+      }
+         
+      // Overall viewmodel for this screen, along with initial state
+      function FBUsersViewModel() {
+        var self = this;
+        // Editable data
+        self.users = ko.observableArray([]);
+        // Operations
+        self.getAllUserFriends = function(){
+          $.getJSON('/api', function(data) {
+            $.each(data, function(index, element){
+              self.users.push(new UserFriendsViewModel(element.user, element.friends));          
+            });
+          });
+        }                
+      }
+      ko.applyBindings(new FBUsersViewModel());
